@@ -1,0 +1,132 @@
+/* style.css - simple styles for home.html */
+
+:root{
+    --bg: #f7f7f8;
+    --card: #ffffff;
+    --primary: #2b6cb0;
+    --muted: #6b7280;
+    --radius: 8px;
+    --max-width: 1100px;
+    --gap: 1rem;
+    font-size: 16px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:var(--bg);
+    color:#111827;
+    line-height:1.45;
+    -webkit-font-smoothing:antialiased;
+    padding:1.25rem;
+    display:flex;
+    justify-content:center;
+}
+
+/* page container */
+.container{
+    width:100%;
+    max-width:var(--max-width);
+    background:transparent;
+}
+
+/* header */
+header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--gap);
+    margin-bottom:1rem;
+}
+.brand{
+    display:flex;
+    align-items:center;
+    gap:0.75rem;
+    text-decoration:none;
+    color:inherit;
+}
+.logo{
+    width:44px;
+    height:44px;
+    background:var(--primary);
+    border-radius:10px;
+    display:inline-block;
+}
+.site-title{font-weight:600;font-size:1.05rem}
+
+/* simple nav */
+nav ul{list-style:none;display:flex;gap:0.75rem}
+nav a{
+    text-decoration:none;
+    color:var(--muted);
+    padding:0.35rem 0.6rem;
+    border-radius:6px;
+    font-weight:500;
+    transition:all .15s ease;
+}
+nav a:hover{background:rgba(43,108,176,0.08);color:var(--primary)}
+
+/* hero / main area */
+.hero{
+    background:linear-gradient(180deg, rgba(43,108,176,0.06), transparent);
+    padding:1.25rem;
+    border-radius:var(--radius);
+    margin-bottom:1rem;
+}
+.hero h1{font-size:1.6rem;margin-bottom:0.35rem}
+.hero p{color:var(--muted);margin-bottom:0.5rem}
+
+/* grid of cards */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:var(--gap);
+    margin-bottom:1rem;
+}
+.card{
+    background:var(--card);
+    padding:0.9rem;
+    border-radius:var(--radius);
+    box-shadow:0 1px 2px rgba(16,24,40,0.04);
+}
+.card h3{font-size:1rem;margin-bottom:0.35rem}
+.card p{color:var(--muted);font-size:0.95rem}
+
+/* simple footer */
+footer{
+    margin-top:0.5rem;
+    padding:0.75rem;
+    color:var(--muted);
+    text-align:center;
+    font-size:0. ninerem;
+}
+
+/* buttons */
+.btn{
+    display:inline-block;
+    background:var(--primary);
+    color:white;
+    padding:0.5rem 0.75rem;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.95rem;
+}
+.btn.secondary{
+    background:transparent;
+    color:var(--primary);
+    border:1px solid rgba(43,108,176,0.12);
+}
+
+/* small utilities */
+.center{text-align:center}
+.mt-1{margin-top:1rem}
+.mb-1{margin-bottom:1rem}
+
+/* responsive tweaks */
+@media (max-width:520px){
+    body{padding:0.75rem}
+    .hero h1{font-size:1.25rem}
+    header{flex-direction:column;align-items:flex-start}
+}
